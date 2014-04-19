@@ -9,7 +9,6 @@
                 <li><a href="<?php echo base_url();?>index.php/site/properties">Properties</a></li>
                 <li><a href="<?php echo base_url();?>index.php/site/naxosisland">Naxos Island</a></li>
                 <li><a href="<?php echo base_url();?>index.php/site/contact">Contact us</a></li>
-                <li><a href="<?php echo base_url();?>index.php/site/login">LogIn</a></li>
             </ul>
         </nav>
     </header>

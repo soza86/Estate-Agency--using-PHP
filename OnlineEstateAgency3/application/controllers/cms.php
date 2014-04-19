@@ -1,5 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
- 
+session_start();
 class Cms extends CI_Controller {
  
     function __construct()
@@ -26,7 +26,7 @@ class Cms extends CI_Controller {
     else
     {
       //If no session, redirect to login page
-      redirect('login', 'refresh');
+      redirect('cmslogin', 'refresh');
 	}
     }
  
@@ -44,4 +44,10 @@ class Cms extends CI_Controller {
     {
         $this->load->view('cms_template.php',$output);    
     }
+	function logout()
+  {
+    $this->session->unset_userdata('logged_in');
+    session_destroy();
+    redirect('cms', 'refresh');
+  }
 }
