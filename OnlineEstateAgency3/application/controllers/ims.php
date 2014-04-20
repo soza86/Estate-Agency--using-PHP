@@ -30,7 +30,10 @@ class Ims extends CI_Controller {
 	 public function vendors()
     {
         $this->grocery_crud->set_table('vendors');
-		$this->grocery_crud->set_rules('lastName','last Name','alpha');
+		$this->grocery_crud->set_rules('lastName','last Name','required','alpha');
+		$this->grocery_crud->set_rules('firstName','first Name','required','alpha');
+		$this->grocery_crud->set_rules('address','address','required');
+		$this->grocery_crud->set_rules('email','email','required');
 		$this->grocery_crud->set_rules('contact_number','Contact Number','integer');
         
 		$output = $this->grocery_crud->render();
@@ -40,6 +43,12 @@ class Ims extends CI_Controller {
 		 public function buyers()
     {
         $this->grocery_crud->set_table('buyers');
+		$this->grocery_crud->set_rules('lastName','last Name','required','alpha');
+		$this->grocery_crud->set_rules('firstName','first Name','required','alpha');
+		$this->grocery_crud->set_rules('address','address','required');
+		$this->grocery_crud->set_rules('email','email','required');
+		$this->grocery_crud->set_rules('contact_number','Contact Number','integer');
+		
         $output1 = $this->grocery_crud->render();
  
         $this->_example_output($output1);
@@ -47,6 +56,12 @@ class Ims extends CI_Controller {
 		 public function agents()
     {
         $this->grocery_crud->set_table('agents');
+		$this->grocery_crud->set_rules('lastName','last Name','required','alpha');
+		$this->grocery_crud->set_rules('firstName','first Name','required','alpha');
+		$this->grocery_crud->set_rules('address','address','required');
+		$this->grocery_crud->set_rules('email','email','required');
+		$this->grocery_crud->set_rules('contact_number','Contact Number','integer');
+		
         $output2 = $this->grocery_crud->render();
  
         $this->_example_output($output2);
@@ -54,6 +69,14 @@ class Ims extends CI_Controller {
 		 public function contracts()
     {
         $this->grocery_crud->set_table('contracts');
+		$this->grocery_crud->set_rules('buyerName','buyername','required');
+		$this->grocery_crud->set_rules('vendorName','vendorname','required');
+		$this->grocery_crud->set_rules('agentName','agentname','required');
+		$this->grocery_crud->set_rules('propertyName','propertyname','required');
+		$this->grocery_crud->set_rules('propertyLocation','propertylocation','required');
+		$this->grocery_crud->set_rules('agreedPrice','agreedprice','required|decimal');
+		$this->grocery_crud->set_rules('dateSigned','datesigned','required');
+		
         $output3 = $this->grocery_crud->render();
  
         $this->_example_output($output3);
