@@ -16,6 +16,12 @@ class Site extends CI_Controller {
 		$this->load->view("content_realestate");
 		$this->load->view("site_footer");
 	}
+	public function properties(){
+		$this->load->view("site_header");
+		$this->load->view("site_nav");
+		$this->load->view("content_properties");
+		$this->load->view("site_footer");
+	}
 	public function naxosisland(){
 		$this->load->view("site_header");
 		$this->load->view("site_nav");
@@ -28,10 +34,5 @@ class Site extends CI_Controller {
 		$this->load->view("content_contact");
 		$this->load->view("site_footer");
 	}
-	public function login(){
-		$this->load->view("site_header");
-		$this->load->view("site_nav");
-		$this->load->view("content_login");
-		$this->load->view("site_footer");
-	}
+	
 }
