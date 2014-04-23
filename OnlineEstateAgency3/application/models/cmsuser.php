@@ -1,5 +1,5 @@
 <?php
-Class Cmsuser extends CI_Model
+Class Cmsuser extends CI_Model //model that sets up the login procedure
 {
 	function login($username, $password)
 	{

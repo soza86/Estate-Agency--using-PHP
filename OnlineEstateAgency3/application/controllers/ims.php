@@ -1,19 +1,19 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 session_start();
-class Ims extends CI_Controller {
+class Ims extends CI_Controller { //The information management system controller
  
     function __construct()
     {
         parent::__construct();
  
-        $this->load->database();
-		$this->load->helper('url');
+        $this->load->database(); //database loaded 
+		$this->load->helper('url'); //URL helper is loaded
         /* ------------------ */ 
  
-        $this->load->library('grocery_CRUD');
+        $this->load->library('grocery_CRUD'); //grocery CRUD application library is loaded
     }
  
-    public function index()
+    public function index() //function index that make the login
     {
         if($this->session->userdata('logged_in'))
     {
@@ -27,10 +27,10 @@ class Ims extends CI_Controller {
       redirect('imslogin', 'refresh');
 	}
     }
-	 public function vendors()
+	 public function vendors() //function that sets up functionalities for vendors
     {
-        $this->grocery_crud->set_table('vendors');
-		$this->grocery_crud->set_rules('lastName','last Name','required','alpha');
+        $this->grocery_crud->set_table('vendors'); //table vendors is set
+		$this->grocery_crud->set_rules('lastName','last Name','required','alpha'); //set validation rules
 		$this->grocery_crud->set_rules('firstName','first Name','required','alpha');
 		$this->grocery_crud->set_rules('address','address','required');
 		$this->grocery_crud->set_rules('email','email','required');
@@ -40,7 +40,7 @@ class Ims extends CI_Controller {
  
         $this->_example_output($output);
     }
-		 public function buyers()
+		 public function buyers() //function that sets up functionalities for buyers
     {
         $this->grocery_crud->set_table('buyers');
 		$this->grocery_crud->set_rules('lastName','last Name','required','alpha');
@@ -53,7 +53,7 @@ class Ims extends CI_Controller {
  
         $this->_example_output($output1);
     }
-		 public function agents()
+		 public function agents() //function that sets up functionalities for agents
     {
         $this->grocery_crud->set_table('agents');
 		$this->grocery_crud->set_rules('lastName','last Name','required','alpha');
@@ -66,7 +66,7 @@ class Ims extends CI_Controller {
  
         $this->_example_output($output2);
     }
-		 public function contracts()
+		 public function contracts() //function that sets up functionalities for contracts
     {
         $this->grocery_crud->set_table('contracts');
 		$this->grocery_crud->set_rules('buyerName','buyername','required');
@@ -84,7 +84,7 @@ class Ims extends CI_Controller {
 	function _example_output($output = null)
  
     {
-        $this->load->view('ims_template.php',$output);    
+        $this->load->view('ims_template.php',$output); // the view of the ims is loaded   
     }
 	function logout()
   {
@@ -94,5 +94,3 @@ class Ims extends CI_Controller {
   }
 }
  
-/* End of file main.php */
-/* Location: ./application/controllers/main.php */

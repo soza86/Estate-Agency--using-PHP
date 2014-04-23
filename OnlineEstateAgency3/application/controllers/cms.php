@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 session_start();
-class Cms extends CI_Controller {
+class Cms extends CI_Controller { // Content Management System Controller
  
     function __construct()
     {
@@ -30,7 +30,7 @@ class Cms extends CI_Controller {
 	}
     }
  
-    public function properties()
+    public function properties() //function for setting up the CMS
     {
         $this->grocery_crud->set_table('properties');
 		$this->grocery_crud->set_rules('name','name','required');

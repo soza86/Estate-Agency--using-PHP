@@ -1,7 +1,7 @@
 <?php
-Class Imsuser extends CI_Model
+Class Imsuser extends CI_Model //model that sets up the login procedure
 {
-	function login($username, $password)
+	function login($username, $password) 
 	{
 		$this -> db -> select('id, username, password');
 		$this -> db -> from('users');
