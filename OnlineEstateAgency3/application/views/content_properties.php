@@ -17,20 +17,50 @@ if(! $retval )
 }
 while($row = mysql_fetch_array($retval, MYSQL_ASSOC))
 {
-    echo "NAME: {$row['name']}  <br> ".
-         "PLACE: {$row['place']} <br> ".
-         "DESCRIPTION: {$row['description']} <br> ".
-		 "PRICE: {$row['price']}  <br> ".
-		 "ADDED BY AGENT: {$row['added_by']}  <br> ";
-		echo '<img src="echo $row->images" height="250" width="250">';
-		echo "<tr>"; 
-		echo "<td><img src =\"" . $row['images']."\"></td>"; 
-		echo "</tr>"; 
-		"<br><br>";
+		   echo "
+		    <table border=1 cellpadding=5>
+				<tr>
+				<td>Property Name: </td>
+				<td> {$row['name']} </td>
+				</tr>
+				<tr>
+				<td>Property Location: </td>
+				<td>{$row['place']} </td>
+				</tr>
+			</table>";
+			
+			echo "<br/><br/>";
+		   
+		    echo "
+			<table border=1 cellpadding=5>
+				<tr>
+				<td>Description: </td>
+				<td> {$row['description']} </td>
+				</tr>
+			</table>";
+		    
+			echo "<br/><br/>";
+			
+			echo "
+		    <table border=1 cellpadding=5>
+				<tr>
+				<td>Sales Price (In Euros): </td>
+				<td> {$row['price']} </td>
+				</tr>
+				<tr>
+				<td>Added by agent: </td>
+				<td>{$row['added_by']} </td>
+				</tr>
+			</table>";
+			echo "<br/><br/>";
 		
-
+			$image=$row ['images'];
+			echo '<img src="http://localhost/OnlineEstateAgency3/propertyimages/'.$image.'" width="400" height="200"';
+			echo "<br/><br/><br/><br/>";
+			echo "Ask the agency for more information".
+			"<br/><br/>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
 		       
 } 
 
-mysql_close($conn);
+mysql_close($conn)
 ?>

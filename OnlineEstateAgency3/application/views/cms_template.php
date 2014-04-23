@@ -32,6 +32,7 @@ a:hover
 </head>
 <body>
 <!-- Beginning header -->
+	<h1> Content Management System </h1>
     <div>
         <a href='<?php echo site_url('cms/properties')?>'>Manage Properties</a>  
         
@@ -43,7 +44,7 @@ a:hover
  
     </div>
 <!-- Beginning footer -->
-<div>Footer</div>
+<div><?php include 'site_footer.php'; ?></div>
 <!-- End of Footer -->
 </body>
 </html>

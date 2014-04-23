@@ -32,6 +32,7 @@ a:hover
 </head>
 <body>
 <!-- Beginning header -->
+	<h1> Administrator Page </h1>
     <div>
         <a href='<?php echo site_url('ims/vendors')?>'>Vendors</a> | 
         <a href='<?php echo site_url('ims/buyers')?>'>Buyers</a> |
@@ -46,7 +47,7 @@ a:hover
  
     </div>
 <!-- Beginning footer -->
-<div>Footer</div>
+<div><?php include 'site_footer.php'; ?></div>
 <!-- End of Footer -->
 </body>
 </html>

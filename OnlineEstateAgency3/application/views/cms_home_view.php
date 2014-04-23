@@ -6,7 +6,7 @@
   <body>
     <h1>Property Management Area</h1>
     <h2>Welcome <?php echo $username; ?>!</h2>
-	<a href='<?php echo site_url('cms/properties')?>'>Manage Properties</a><br/><br/>
+	<a href='<?php echo site_url('cms/properties')?>' target="_blank">Manage Properties</a><br/><br/>
     <a href='<?php echo site_url('Cmslogin')?>'>Logout</a>
   </body>
 </html>

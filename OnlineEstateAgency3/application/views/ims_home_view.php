@@ -6,7 +6,7 @@
   <body>
     <h1>Administration Area</h1>
     <h2>Welcome <?php echo $username; ?>!</h2>
-	<a href='<?php echo site_url('ims/vendors')?>'>Go To Adminstration Tools</a><br/><br/>
+	<a href='<?php echo site_url('ims/vendors')?>' target="_blank">Go To Adminstration Tools</a><br/><br/>
     <a href='<?php echo site_url('Imslogin')?>'>Logout</a>
   </body>
 </html>

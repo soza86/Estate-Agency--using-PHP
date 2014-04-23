@@ -33,7 +33,11 @@ class Cms extends CI_Controller {
     public function properties()
     {
         $this->grocery_crud->set_table('properties');
+		$this->grocery_crud->set_rules('name','name','required');
+		$this->grocery_crud->set_rules('place','place','required');
 		$this->grocery_crud->set_rules('description','description','required');
+		$this->grocery_crud->set_rules('added_by','added by','required');
+		$this->grocery_crud->set_rules('Price','price','required|integer');
 		$this->grocery_crud->display_as('name','Property Name');
 		$this->grocery_crud->set_field_upload('images','propertyimages');
         $output = $this->grocery_crud->render();
